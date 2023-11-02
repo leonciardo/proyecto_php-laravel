@@ -38,7 +38,7 @@
                     <ul class="navbar-nav mx-auto"> <!-- Utilizamos "mx-auto" para centrar el contenido -->
                         @if (auth()->check() && auth()->user()->role_id == 1)
                             <li class="nav-item">
-                                <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('REGISTRO') }}</a>
+                                <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('REGISTRO DE NUEVOS USUARIOS') }}</a>
                             </li>
                         @endif
                     </ul>

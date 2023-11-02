@@ -41,7 +41,8 @@
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </form>
                 </div>
-            </div>
+                <button onclick="window.location.href = 'home'" class="dashboard-button">Volver al Dashboard
+            </button>            </div>
         </div>
     </div>
 </div>
