@@ -2,11 +2,13 @@
 
 @section('content')
 
+
 <div class="text-center mt-10">
         <a href="{{ route('save.producto') }}" class="btn btn-danger btn-lg">AGREGAR</a>
         @method('POST')
         @csrf
 </div>
+
 <br>
 <br>
 <div class="container">

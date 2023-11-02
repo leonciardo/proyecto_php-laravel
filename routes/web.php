@@ -2,6 +2,8 @@
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,9 @@ Route::put('/profile', [ProfileController::class, 'update'])->name('profile.upda
 });
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/*Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');*/
+Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [UserController::class, 'register']);
+
+
+

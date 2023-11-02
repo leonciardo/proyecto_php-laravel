@@ -29,12 +29,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password">Contraseña</label>
+                            <label for="password"> Nueva Contraseña</label>
                             <input id="password" type="password" class="form-control" name="password" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm">Confirmar Contraseña</label>
+                            <label for="password-confirm">Confirmar Nueva Contraseña</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                         </div>
 

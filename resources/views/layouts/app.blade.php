@@ -35,18 +35,29 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
+                    <ul class="navbar-nav mx-auto"> <!-- Utilizamos "mx-auto" para centrar el contenido -->
+                        @if (auth()->check() && auth()->user()->role_id == 1)
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-primary" href="{{ route('register') }}">{{ __('REGISTRO') }}</a>
+                            </li>
+                        @endif
+                    </ul>
+
+
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
+
                         @if (Route::has('register') && \App\Models\User::where('role_id', 1)->count() === 0)
                             <!-- Mostrar la opción de registro solo si no hay usuarios con role_id igual a 1 (administrador) -->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
+
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -56,6 +67,7 @@
                                 <a class="dropdown-item" href="{{ route('profile.edit') }}">
                                     Editar Perfil
                                 </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
